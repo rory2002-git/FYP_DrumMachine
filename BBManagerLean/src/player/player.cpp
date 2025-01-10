@@ -557,6 +557,30 @@ void Player::run(void)
     emit sigPlayerStopped();
 }
 
+void Player::start() {
+    if (m_prevPart == stopped) {
+        // Initialize the audio system if not already done
+        if (!m_audioOutput) {
+            initAudio();
+        }
+
+        // Start playing the song
+        qDebug() << "Starting the song...";
+
+        // Update the state to playing
+        m_prevPart = playing;
+
+        // Add any additional logic to actually start the audio playback (e.g., buffering the first segment of the song)
+    }
+    else if (m_prevPart == paused) {
+        // If the song was paused, resume it
+        qDebug() << "Resuming the song...";
+        m_prevPart = playing;
+        // Logic to resume playback from the paused position
+    }
+}
+
+
 /* DO NOT CALL THIS FUNCTION FROM AUDIO THREAD */
 void Player::play(void)
 {

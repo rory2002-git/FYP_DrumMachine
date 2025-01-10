@@ -1,6 +1,8 @@
+
 *.pro.user*
 bbmanager.pro.user
 *.o
+.vs/
 .qmake.stash
 Makefile
 BBManagerLean/BBManagerLean
