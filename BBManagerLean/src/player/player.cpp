@@ -571,8 +571,7 @@ void Player::start() {
         m_prevPart = playing;
 
         // Add any additional logic to actually start the audio playback (e.g., buffering the first segment of the song)
-    }
-    else if (m_prevPart == paused) {
+    } else if (m_prevPart == paused) {
         // If the song was paused, resume it
         qDebug() << "Resuming the song...";
         m_prevPart = playing;
